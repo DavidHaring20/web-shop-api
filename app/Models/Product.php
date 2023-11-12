@@ -11,7 +11,7 @@ class Product extends Model
 
     const CREATED_AT = 'published_date';
     const UPDATED_AT = null;
-    protected $primaryKey = 'product_sku';
+    protected $primaryKey = 'sku';
     protected $keyType = 'string';
     public $incrementing = false;
 }
