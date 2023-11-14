@@ -13,7 +13,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('contract_lists', function (Blueprint $table) {
-            $table->id();
             $table->foreignId('customer_id')
                   ->constrained()
                   ->onDelete('cascade');
