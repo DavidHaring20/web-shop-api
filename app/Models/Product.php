@@ -14,4 +14,8 @@ class Product extends Model
     protected $primaryKey = 'sku';
     protected $keyType = 'string';
     public $incrementing = false;
+
+    public function categoryProduct(): hasMany {
+        return $this->hasMany(CategoryProduct::class);
+    }
 }
