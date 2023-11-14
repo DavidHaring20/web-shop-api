@@ -18,6 +18,9 @@ return new class extends Migration
                       table: 'customers', indexName: 'orders_customer_id')
                   ->onUpdate('cascade')
                   ->onDelete('cascade');
+            $table->foreignId('price_modificator_id')
+                  ->constrained()
+                  ->onDelete('cascade');
             $table->decimal('order_price', $precision=18, $scale=2);
         });
     }
