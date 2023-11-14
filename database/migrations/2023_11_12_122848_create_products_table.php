@@ -16,7 +16,7 @@ return new class extends Migration
             $table->char('name', 50);
             $table->char('description', 250);
             $table->decimal('price', $precision=7, $scale=2);
-            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('published_date')->useCurrent();
         });
     }
 
