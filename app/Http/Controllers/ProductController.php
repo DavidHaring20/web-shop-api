@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 use App\Models\Product;
+use Faker\Factory as Faker;
 
 class ProductController extends Controller
 {
@@ -19,5 +19,18 @@ class ProductController extends Controller
         $product = Product::where('sku', 'like', '%'.$sku.'%')
                         ->first();
         return $product;
+    }
+
+    public function createProducts(Request $request) {
+
+        $faker = Faker::create();
+
+        foreach($request->products as $product) {
+            Product::create([
+                'name' => $product['name'],
+                'description' => $product['description'],
+                'price' => $product['price']
+            ]);
+        }
     }
 }
